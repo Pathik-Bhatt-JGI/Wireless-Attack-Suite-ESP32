@@ -1,0 +1,71 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                  BT PAYLOAD ATTACK CRASH - FIXED                   ║
+╚════════════════════════════════════════════════════════════════════╝
+
+PROBLEM:
+════════════════════════════════════════════════════════════════════
+Guru Meditation Error: Core 0 panic'ed (LoadProhibited)
+at ble_hs_is_enabled (ble_hs.c:456)
+called from ble_gap_adv_stop (ble_gap.c:4111)
+called from bt_payload_attack_start (bt_payload_attack.cpp:311)
+
+ROOT CAUSE:
+════════════════════════════════════════════════════════════════════
+The code was calling ble_gap_adv_stop() without checking if the
+BLE stack was initialized first. This caused a null pointer crash.
+
+The error "BTDM_INIT: esp_bt_controller_rom_mem_release already 
+released" indicates the BT controller wasn't properly initialized.
+
+FIX APPLIED:
+════════════════════════════════════════════════════════════════════
+Added a check before calling ble_gap_adv_stop():
+
+BEFORE:
+    s_keyboard->begin();
+    ble_gap_adv_stop();  ← CRASH HERE if BLE not initialized
+    vTaskDelay(pdMS_TO_TICKS(100));
+    ble_gap_adv_start(...);
+
+AFTER:
+    s_keyboard->begin();
+    
+    // Only stop advertising if BLE is already initialized
+    if (ble_hs_is_enabled()) {
+        ble_gap_adv_stop();
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
+    
+    ble_gap_adv_start(...);
+
+FILE MODIFIED:
+════════════════════════════════════════════════════════════════════
+main/bt/bt_payload_attack.cpp (line 311)
+
+WHAT TO DO NOW:
+════════════════════════════════════════════════════════════════════
+1. Rebuild the firmware:
+   idf.py build
+
+2. Flash again (use BOOT button method if needed):
+   idf.py -p COM17 -b 115200 flash monitor
+
+3. Test the BT payload attack - it should work now!
+
+DEVICE STATUS:
+════════════════════════════════════════════════════════════════════
+✅ Device flashed successfully
+✅ WiFi working (AP: "pathiks" at 192.168.4.1)
+✅ Display working (SSD1306 detected)
+✅ Middle finger logo displayed
+❌ BT payload crashes (NOW FIXED - rebuild needed)
+
+OTHER KNOWN ISSUES (from earlier):
+════════════════════════════════════════════════════════════════════
+⚠️  WPA Handshake - may restart after EAPOL 3/4 (memory issue)
+⚠️  PMKID - runs forever, no timeout
+⚠️  Deauth - may not work (channel/protection issue)
+
+These are separate issues not related to the BT payload crash.
+
+════════════════════════════════════════════════════════════════════

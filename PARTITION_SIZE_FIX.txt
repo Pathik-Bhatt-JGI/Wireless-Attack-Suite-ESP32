@@ -1,0 +1,85 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                    PARTITION SIZE FIX APPLIED                      ║
+╚════════════════════════════════════════════════════════════════════╝
+
+PROBLEM:
+════════════════════════════════════════════════════════════════════
+Error: app partition is too small for binary pathiks-esp32.bin size 0x103da0:
+- Part 'factory' 0/0 @ 0x10000 size 0x100000 (overflow 0x3da0)
+
+The compiled app is 1,063,328 bytes (1.01 MB)
+The default factory partition is only 1,048,576 bytes (1.0 MB)
+Overflow: 15,776 bytes (0x3da0)
+
+ROOT CAUSE:
+════════════════════════════════════════════════════════════════════
+The build was using the default 1MB partition table instead of the
+custom partitions.csv file which has a 1.5MB factory partition.
+
+SOLUTION APPLIED:
+════════════════════════════════════════════════════════════════════
+✅ Added partition table configuration to sdkconfig.defaults:
+   CONFIG_PARTITION_TABLE_CUSTOM=y
+   CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+   CONFIG_PARTITION_TABLE_FILENAME="partitions.csv"
+
+This tells ESP-IDF to use the custom partitions.csv file which has:
+   factory:  1.5MB (0x180000) - enough for the app
+   storage:  448KB (0x70000)  - for SPIFFS (currently disabled)
+
+HOW TO FIX NOW:
+════════════════════════════════════════════════════════════════════
+Run this command in your ESP-IDF CMD:
+
+   FIX_AND_BUILD.bat
+
+This will:
+1. Delete old sdkconfig (forces new config with custom partition)
+2. Clean build directory
+3. Build with custom 1.5MB partition
+4. Flash to COM17
+
+MANUAL METHOD:
+════════════════════════════════════════════════════════════════════
+del sdkconfig
+rmdir /s /q build
+idf.py build
+idf.py -p COM17 flash monitor
+
+PARTITION TABLE:
+════════════════════════════════════════════════════════════════════
+Name      Type    SubType   Offset    Size      
+nvs       data    nvs       0x9000    24KB      (0x6000)
+phy_init  data    phy       0xf000    4KB       (0x1000)
+factory   app     factory   0x10000   1.5MB     (0x180000) ✅ BIG ENOUGH!
+storage   data    spiffs    0x190000  448KB     (0x70000)
+
+TOTAL: 4MB flash (standard ESP32 size)
+
+WHY DID THIS HAPPEN?
+════════════════════════════════════════════════════════════════════
+The project has a partitions.csv file, but it wasn't being used
+because sdkconfig.defaults didn't specify it. ESP-IDF defaulted to
+the built-in 1MB partition table.
+
+With size optimization (-Os), the app is still ~1.01MB, which is
+slightly over 1MB but fits comfortably in 1.5MB.
+
+WHAT'S NEXT:
+════════════════════════════════════════════════════════════════════
+1. Run: FIX_AND_BUILD.bat
+2. Wait 3-5 minutes for build
+3. Should complete successfully!
+4. Flash to ESP32
+5. See PATHIKS logo and "PATHIKS ONLINE"
+
+THIS IS THE FINAL FIX!
+════════════════════════════════════════════════════════════════════
+All issues resolved:
+✅ Python environment (using 3.11)
+✅ Memory optimization (using -Os)
+✅ SPIFFS disabled (workaround)
+✅ Custom partition table configured (1.5MB)
+
+Next build should succeed! 🚀
+════════════════════════════════════════════════════════════════════

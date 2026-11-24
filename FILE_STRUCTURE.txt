@@ -1,0 +1,220 @@
+PATHIKS ESP32 - Project File Structure
+═══════════════════════════════════════════════════════════════════════
+
+📁 Project Root
+│
+├── 📄 README_FIRST.txt          ← START HERE! Main introduction
+├── 📄 QUICK_START.txt           ← Quick reference card
+├── 📄 HOW_TO_FLASH.md           ← Detailed flash instructions
+├── 📄 PROJECT_STATUS.md         ← Complete project status
+├── 📄 README.md                 ← Technical documentation
+│
+├── 🔧 FLASH_PATHIKS.bat         ← ONE-CLICK FLASH (Use this!)
+├── 🔧 BUILD_ONLY.bat            ← Build without flashing
+├── 🔧 SETUP_ENV.bat             ← Setup environment only
+│
+├── 📄 CMakeLists.txt            ← Main build configuration
+├── 📄 sdkconfig                 ← ESP-IDF configuration
+├── 📄 partitions.csv            ← Flash partition table
+│
+├── 📁 main/                     ← Main application code
+│   ├── 📄 main.c                ← Entry point
+│   ├── 📄 CMakeLists.txt        ← Main component build config
+│   │
+│   ├── 📁 main/                 ← Core attack logic
+│   │   └── 📄 attack.c          ← Central attack wrapper
+│   │
+│   ├── 📁 display/              ← OLED display system
+│   │   ├── 📄 pathiks_ssd1306_display.c    ← Display driver
+│   │   ├── 📄 pathiks_ssd1306_display.h    ← Display header
+│   │   └── 📄 pathiks_logo.h               ← 🖕 Middle finger logo
+│   │
+│   ├── 📁 wifi/                 ← WiFi attack modules
+│   │   ├── 📄 attack_dos.c              ← Deauth attack
+│   │   ├── 📄 attack_pmkid.c            ← PMKID capture
+│   │   ├── 📄 attack_handshake.c        ← WPA handshake
+│   │   ├── 📄 attack_beacon_spam.c      ← Beacon flooding
+│   │   ├── 📄 attack_eviltwin.c         ← Evil twin captive portal
+│   │   ├── 📄 attack_probe.c            ← Probe request sniffer
+│   │   ├── 📄 attack_method.c           ← Common attack methods
+│   │   └── 📄 attack_deauth_detector.c  ← Deauth detection
+│   │
+│   ├── 📁 bt/                   ← Bluetooth attack modules
+│   │   ├── 📄 attack_bt_spam.c          ← BT device spam
+│   │   └── 📄 bt_payload_attack.cpp     ← BT payload delivery
+│   │
+│   └── 📁 utils/                ← Utility modules
+│       ├── 📄 management_helper.c       ← WiFi management
+│       └── 📄 wifi_pass_verifier.c      ← Password verification
+│
+├── 📁 components/               ← External libraries
+│   ├── 📁 esp-nimble-cpp/       ← Bluetooth library
+│   ├── 📁 u8g2/                 ← OLED graphics library
+│   └── 📁 u8g2-hal-esp-idf/     ← OLED HAL for ESP32
+│
+├── 📁 data/                     ← Web interface files
+│   ├── 📄 index.html            ← Main web page
+│   ├── 📄 style.css             ← Web UI styling
+│   └── 📁 devil_twin/           ← Evil twin captive portal pages
+│       ├── 📄 index.html
+│       └── 📄 wrong-password.html
+│
+├── 📁 build/                    ← Build output (generated)
+│   └── 📄 pathiks-esp32.bin     ← Compiled firmware (after build)
+│
+└── 📁 .vscode/                  ← VS Code settings
+    ├── 📄 settings.json
+    └── 📄 c_cpp_properties.json
+
+
+KEY FILES THAT WERE CHANGED (Hydra → PATHIKS):
+═══════════════════════════════════════════════════════════════════════
+
+RENAMED FILES:
+  hydra_ssd1306_display.c  →  pathiks_ssd1306_display.c
+  hydra_ssd1306_display.h  →  pathiks_ssd1306_display.h
+  hydra_logo.h             →  pathiks_logo.h (NEW content: 🖕)
+
+UPDATED FILES (includes and function calls):
+  main/main.c
+  main/main/attack.c
+  main/wifi/attack_method.c
+  main/wifi/attack_handshake.c
+  main/wifi/attack_probe.c
+  main/wifi/attack_eviltwin.c
+  main/CMakeLists.txt
+  data/index.html
+  data/style.css
+  README.md
+
+
+EXECUTION FLOW:
+═══════════════════════════════════════════════════════════════════════
+
+┌─────────────────┐
+│   Power On ESP32│
+└────────┬────────┘
+         │
+         ↓
+┌─────────────────────────┐
+│   main.c Entry Point    │
+│  - Initialize WiFi      │
+│  - Initialize Display   │
+│  - Show 🖕 Logo         │
+│  - Start Web Server     │
+└────────┬────────────────┘
+         │
+         ↓
+┌─────────────────────────┐
+│   User Connects         │
+│  SSID: pathiks          │
+│  Opens: 192.168.4.1     │
+└────────┬────────────────┘
+         │
+         ↓
+┌─────────────────────────┐
+│   User Selects Attack   │
+│  - Choose target(s)     │
+│  - Set parameters       │
+│  - Click "Start"        │
+└────────┬────────────────┘
+         │
+         ↓
+┌─────────────────────────┐
+│   attack.c Routes       │
+│  - Parse request        │
+│  - Call attack module   │
+│  - Monitor progress     │
+└────────┬────────────────┘
+         │
+         ↓
+┌─────────────────────────┐
+│   Attack Module Runs    │
+│  e.g., attack_dos.c     │
+│  - Execute attack       │
+│  - Update display       │
+│  - Capture data         │
+└────────┬────────────────┘
+         │
+         ↓
+┌─────────────────────────┐
+│   Results               │
+│  - PCAP file created    │
+│  - Display shows status │
+│  - Download via web UI  │
+└─────────────────────────┘
+
+
+BUILD OUTPUT LOCATIONS:
+═══════════════════════════════════════════════════════════════════════
+
+After running "idf.py build", you'll find:
+
+build/pathiks-esp32.bin         ← Main firmware binary
+build/bootloader/bootloader.bin ← Bootloader binary
+build/partition_table/          ← Partition table
+build/spiffs/                   ← SPIFFS filesystem
+build/*.map                     ← Memory map files (for debugging)
+
+
+IMPORTANT DIRECTORIES:
+═══════════════════════════════════════════════════════════════════════
+
+DO NOT DELETE:
+  components/     ← External libraries (needed for build)
+  main/           ← Your application code
+  data/           ← Web interface files
+  sdkconfig       ← Configuration (will regenerate but takes time)
+
+SAFE TO DELETE (will regenerate):
+  build/          ← Build output (deleted by "idf.py fullclean")
+
+
+CONFIGURATION FILES:
+═══════════════════════════════════════════════════════════════════════
+
+sdkconfig               ← Main ESP-IDF configuration
+                          • WiFi settings
+                          • Bluetooth settings
+                          • Memory allocation
+                          • Debug levels
+                          
+partitions.csv          ← Flash memory layout
+                          • Boot partition
+                          • App partition
+                          • SPIFFS storage
+                          • NVS storage
+
+CMakeLists.txt (root)   ← Project-level build config
+main/CMakeLists.txt     ← Component-level build config
+
+
+LOGS AND DEBUGGING:
+═══════════════════════════════════════════════════════════════════════
+
+Serial Monitor Output:
+  • ESP_LOGI() messages from all modules
+  • Attack status updates
+  • Error messages
+  • Debug information
+
+OLED Display:
+  • Real-time attack status
+  • Target information
+  • Progress indicators
+  • Success/failure messages
+
+Web Interface:
+  • Attack controls
+  • Target selection
+  • Download captured files
+  • Status monitoring
+
+
+═══════════════════════════════════════════════════════════════════════
+Total Source Files:  ~40 .c/.cpp files + ~40 .h header files
+Total Components:    3 external libraries (nimble, u8g2, u8g2-hal)
+Build Time:          3-5 minutes (first build), 30-60 sec (incremental)
+Firmware Size:       ~2-3 MB
+Flash Partition:     4MB total (check partitions.csv)
+═══════════════════════════════════════════════════════════════════════

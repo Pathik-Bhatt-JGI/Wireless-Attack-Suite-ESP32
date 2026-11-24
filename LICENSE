@@ -1,0 +1,84 @@
+MIT License
+
+Copyright (c) 2026 Pathik Bhatt (PATHIKS)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+
+THIRD-PARTY COMPONENTS
+
+This project incorporates code and components from the following open-source
+projects:
+
+1. ESP32 Wi-Fi Penetration Tool by risinek
+   Repository: https://github.com/risinek/esp32-wifi-penetration-tool
+   Copyright (c) 2021 risinek
+   License: See original repository
+
+2. ESP8266 Deauther by spacehuhn (inspiration)
+   Repository: https://github.com/SpacehuhnTech/esp8266_deauther
+   Copyright (c) spacehuhn
+   License: See original repository
+
+3. EvilAppleJuice-ESP32 (BLE spam components)
+   Repository: https://github.com/ckcr4lyf/EvilAppleJuice-ESP32
+   Contributors: justcallmekoko, ckcr4lyf
+   License: See original repository
+
+4. u8g2 Graphics Library
+   Repository: https://github.com/olikraus/u8g2
+   Copyright (c) olikraus
+   License: BSD 2-Clause License
+
+5. esp-nimble-cpp
+   Repository: https://github.com/h2zero/esp-nimble-cpp
+   License: Apache License 2.0
+
+6. u8g2-hal-esp-idf
+   Repository: https://github.com/mkfrey/u8g2-hal-esp-idf
+   License: See original repository
+
+7. ESP32-BLE-Keyboard (modified as ESP32-NimBLE-Keyboard)
+   Repository: https://github.com/T-vK/ESP32-BLE-Keyboard
+   License: See original repository
+
+--------------------------------------------------------------------------------
+
+LEGAL DISCLAIMER
+
+THIS SOFTWARE IS PROVIDED FOR EDUCATIONAL AND AUTHORIZED SECURITY TESTING
+PURPOSES ONLY.
+
+Unauthorized access to computer networks, wireless networks, or systems is
+illegal under various laws including but not limited to:
+- Computer Fraud and Abuse Act (CFAA) - United States
+- Computer Misuse Act - United Kingdom
+- IT Act 2000 - India and Bangladesh
+- Similar legislation in other jurisdictions
+
+You may ONLY use this software on networks and systems:
+1. That you own, OR
+2. For which you have explicit written authorization to test
+
+The copyright holder and contributors accept NO LIABILITY for misuse of this
+software. You are SOLELY RESPONSIBLE for ensuring your use complies with all
+applicable laws and regulations.
+
+USE AT YOUR OWN RISK.

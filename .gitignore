@@ -1,0 +1,64 @@
+# ESP-IDF build artifacts
+build/
+sdkconfig
+sdkconfig.old
+dependencies.lock
+managed_components/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+
+# IDEs
+.vscode/
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
+*.temp
+
+# Build outputs
+*.bin
+*.elf
+*.map
+*.a
+*.o
+
+# ESP-IDF specific
+bootloader.bin
+partition-table.bin
+*.img
+
+# Project specific
+captures/*.pcap
+captures/*.hccapx
+!captures/.gitkeep

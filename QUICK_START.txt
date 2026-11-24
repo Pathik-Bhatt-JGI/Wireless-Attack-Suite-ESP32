@@ -1,0 +1,95 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                   PATHIKS ESP32 - QUICK START                 ║
+╚═══════════════════════════════════════════════════════════════╝
+
+🚀 FASTEST WAY TO FLASH:
+═══════════════════════════════════════════════════════════════
+
+1. Connect ESP32 to USB (COM17)
+2. Double-click: FLASH_PATHIKS.bat
+3. Wait 3-5 minutes
+4. Done!
+
+───────────────────────────────────────────────────────────────
+
+📦 WHAT YOU HAVE:
+═══════════════════════════════════════════════════════════════
+
+✓ All "Hydra" references removed → Now "PATHIKS"
+✓ Middle finger emoji 🖕 boot logo (128x64 bitmap)
+✓ WiFi attacks: Deauth, PMKID, Handshake, Evil Twin
+✓ Bluetooth attacks: BT Spam, BT Payload
+✓ Web interface for control
+✓ OLED display support (SSD1306)
+
+───────────────────────────────────────────────────────────────
+
+📁 IMPORTANT FILES:
+═══════════════════════════════════════════════════════════════
+
+FLASH_PATHIKS.bat    → Full build + flash + monitor (ALL-IN-ONE)
+BUILD_ONLY.bat       → Just build, don't flash
+SETUP_ENV.bat        → Open terminal with idf.py ready
+HOW_TO_FLASH.md      → Detailed instructions
+README.md            → Project documentation
+
+───────────────────────────────────────────────────────────────
+
+🔧 MANUAL COMMANDS (if you prefer):
+═══════════════════════════════════════════════════════════════
+
+Step 1: Setup environment
+  C:\Espressif\frameworks\esp-idf-v5.5.5\export.bat
+
+Step 2: Build
+  idf.py fullclean
+  idf.py build
+
+Step 3: Flash
+  idf.py -p COM17 flash
+
+Step 4: Monitor (optional)
+  idf.py -p COM17 monitor
+
+───────────────────────────────────────────────────────────────
+
+🌐 AFTER FLASHING:
+═══════════════════════════════════════════════════════════════
+
+1. Power on ESP32
+2. Connect to WiFi:
+   - SSID: pathiks
+   - Password: 12345678
+3. Open browser: http://192.168.4.1
+4. Start attacking!
+
+───────────────────────────────────────────────────────────────
+
+⚠️ TROUBLESHOOTING:
+═══════════════════════════════════════════════════════════════
+
+Problem: "idf.py not recognized"
+Fix:     Run SETUP_ENV.bat first
+
+Problem: "Failed to connect to ESP32"
+Fix:     Check USB cable, hold BOOT button, or try different port
+
+Problem: Build errors
+Fix:     Run: idf.py fullclean && idf.py build
+
+───────────────────────────────────────────────────────────────
+
+✅ YOUR SETUP:
+═══════════════════════════════════════════════════════════════
+
+ESP-IDF:  v5.5.5
+Location: C:\Espressif\frameworks\esp-idf-v5.5.5
+Hardware: ESP32 DevKit V1
+COM Port: COM17
+Project:  C:\Users\pathi\Downloads\final_build_with_button_attacks\final_build_with_button_attacks
+
+───────────────────────────────────────────────────────────────
+
+💡 TIP: First build takes 3-5 minutes. Rebuilds are much faster!
+
+═══════════════════════════════════════════════════════════════
