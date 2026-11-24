@@ -6,14 +6,14 @@
 <p><em>Personalized by Pathiks</em></p>
 </div>
 
-[![Stars](https://img.shields.io/github/stars/SameerAlSahab/ESP32-Deauther?style=for-the-badge&color=yellow)](https://github.com/SameerAlSahab/ESP32-Deauther/stargazers)
-[![Forks](https://img.shields.io/github/forks/SameerAlSahab/ESP32-Deauther?style=for-the-badge&color=orange)](https://github.com/SameerAlSahab/ESP32-Deauther/network/members)
-[![Issues](https://img.shields.io/github/issues/SameerAlSahab/ESP32-Deauther?style=for-the-badge&color=red)](https://github.com/SameerAlSahab/ESP32-Deauther/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/SameerAlSahab/ESP32-Deauther?style=for-the-badge&color=purple)](https://github.com/SameerAlSahab/ESP32-Deauther/pulls)
-[![License](https://img.shields.io/github/license/SameerAlSahab/ESP32-Deauther?style=for-the-badge&color=blue)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/SameerAlSahab/ESP32-Deauther?style=for-the-badge&color=brightgreen)](https://github.com/SameerAlSahab/ESP32-Deauther/commits)
-[![Repo Size](https://img.shields.io/github/repo-size/SameerAlSahab/ESP32-Deauther?style=for-the-badge&color=informational)](https://github.com/SameerAlSahab/ESP32-Deauther)
-[![Contributors](https://img.shields.io/github/contributors/SameerAlSahab/ESP32-Deauther?style=for-the-badge&color=pink)](https://github.com/SameerAlSahab/ESP32-Deauther/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=yellow)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/stargazers)
+[![Forks](https://img.shields.io/github/forks/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=orange)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/network/members)
+[![Issues](https://img.shields.io/github/issues/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=red)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=purple)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/pulls)
+[![License](https://img.shields.io/github/license/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=blue)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=brightgreen)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/commits)
+[![Repo Size](https://img.shields.io/github/repo-size/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=informational)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32)
+[![Contributors](https://img.shields.io/github/contributors/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=pink)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/graphs/contributors)
 
 A wireless security research firmware for the ESP32 microcontroller. Built on top of [risinek's](https://github.com/risinek/esp32-wifi-penetration-tool) original ESP32 Wi-Fi penetration tool foundation, PATHIKS extends the original with a redesigned web interface, multi-target deauthentication, BLE attack capabilities, a deauth attack detector, optional OLED display support, and several additional attack modules.
 
