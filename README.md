@@ -1,23 +1,14 @@
 
-# PATHIKS
+# Wireless Attack Suite ESP32
 
 <div align="center">
-<h2>⚡ Custom ESP32 Wi-Fi Security Tool ⚡</h2>
-<p><em>Personalized by Pathiks</em></p>
+<h3>ESP32 Wireless Security Research Firmware</h3>
+<p>Wi-Fi & BLE Attack Capabilities</p>
 </div>
 
-[![Stars](https://img.shields.io/github/stars/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=yellow)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/stargazers)
-[![Forks](https://img.shields.io/github/forks/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=orange)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/network/members)
-[![Issues](https://img.shields.io/github/issues/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=red)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=purple)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/pulls)
-[![License](https://img.shields.io/github/license/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=blue)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=brightgreen)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/commits)
-[![Repo Size](https://img.shields.io/github/repo-size/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=informational)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32)
-[![Contributors](https://img.shields.io/github/contributors/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32?style=for-the-badge&color=pink)](https://github.com/Pathik-Bhatt-JGI/Wireless-Attack-Suite-ESP32/graphs/contributors)
+---
 
-A wireless security research firmware for the ESP32 microcontroller. Built on top of [risinek's](https://github.com/risinek/esp32-wifi-penetration-tool) original ESP32 Wi-Fi penetration tool foundation, PATHIKS extends the original with a redesigned web interface, multi-target deauthentication, BLE attack capabilities, a deauth attack detector, optional OLED display support, and several additional attack modules.
-
-**Personalized Edition by Pathiks** - Custom branding, enhanced UI, and optimized for personal security research.
+A wireless security research firmware for the ESP32 microcontroller. Built on top of [risinek's](https://github.com/risinek/esp32-wifi-penetration-tool) original ESP32 Wi-Fi penetration tool foundation, with additions including redesigned web interface, multi-target deauthentication, BLE attack capabilities, deauth attack detector, optional OLED display support, and additional attack modules.
 
 ---
 
@@ -154,12 +145,9 @@ Credentials can be changed from the Settings tab and are persisted to NVS flash 
 
 ## Credits
 
-| Role | Name |
-|---|---|
-| Lead Developer | Sameer Al Sahab |
-| Original Codebase | [risinek](https://github.com/risinek/esp32-wifi-penetration-tool) |
-| Inspiration | [spacehuhn](https://github.com/SpacehuhnTech/esp8266_deauther) |
-| BLE Spam Code | [justcallmekoko and ckcr4lyf](https://github.com/ckcr4lyf/EvilAppleJuice-ESP32) |
+- **Original Codebase**: [risinek/esp32-wifi-penetration-tool](https://github.com/risinek/esp32-wifi-penetration-tool)
+- **Inspiration**: [spacehuhn/esp8266_deauther](https://github.com/SpacehuhnTech/esp8266_deauther)
+- **BLE Components**: [EvilAppleJuice-ESP32](https://github.com/ckcr4lyf/EvilAppleJuice-ESP32)
 
 ---
 
